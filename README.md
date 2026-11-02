@@ -24,31 +24,11 @@ The live storefront is deployed and accessible on GitHub Pages:
 
 ## 🖥️ Website & Features Walkthrough Demo
 
-A walkthrough demonstrating the desktop experience, interactive physics charm stage, dynamic bag drawer, cloud catalogue filters, and WhatsApp order handoff:
+A walkthrough demonstrating the desktop experience, interactive physics charm stage, dynamic bag drawer, and WhatsApp order handoff:
 
 <p align="center">
   <img src="public/buzzko-website-demo.gif" alt="Buzzko Feature Walkthrough Demo" width="100%" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);" />
 </p>
-
-### 📥 Video Downloads & Formats
-- 🎬 **[Download MP4 Video (1080p / 720p HD)](public/buzzko-website-demo.mp4)** *(Compatible with Windows, Mac, iOS, Android, and video editors)*
-- 🎞️ **[Download WebM Video (High Quality)](public/buzzko-website-demo.webm)**
-- 📁 Backup copies also stored in `Assets/buzzko-website-demo.mp4` and `Assets/buzzko-website-demo.webm`.
-
----
-
-## 📱 Mobile UI Promotional Reel (For Social Media Content Posting)
-
-Specially formatted for content posting on **Instagram Reels, TikTok, YouTube Shorts, and WhatsApp Status** to showcase the mobile responsive web app, touch interactions, and UI architecture:
-
-<p align="center">
-  <img src="public/buzzko-feature-reel.gif" alt="Buzzko Mobile Feature Reel" width="360" style="border-radius: 24px; box-shadow: 0 12px 35px rgba(0,0,0,0.25);" />
-</p>
-
-### 📥 Reel Video Downloads
-- 🎬 **[Download Mobile Reel (MP4 9:16 Vertical HD)](public/buzzko-feature-reel.mp4)** *(Ready to upload to Instagram Reels / YouTube Shorts)*
-- 🎞️ **[Download Mobile Reel (WebM 9:16 Vertical)](public/buzzko-feature-reel.webm)**
-- 📁 Backup copy stored in `Assets/buzzko-feature-reel.mp4`
 
 ---
 
@@ -63,16 +43,7 @@ An interactive floating charm stage with pointer parallax, real-time depth persp
 
 ---
 
-### 2. Live Cloud Catalogue & Filter Chips
-Instant category filtering (*All*, *Keychains*, *Charms*), dynamic strikethrough pricing calculations, modal high-resolution image zoom inspection, and an OfferStrip banner that conditionally renders only when catalogue prices match promotion criteria.
-
-<p align="center">
-  <img src="public/preview-shop.png" alt="Buzzko Filterable Catalogue" width="94%" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" />
-</p>
-
----
-
-### 3. Zod-Validated WhatsApp Checkout Workflow
+### 2. Zod-Validated WhatsApp Checkout Workflow
 Zero-friction checkout flow featuring strict client-side validation (Indian mobile numbers, 6-digit postal PIN codes, state, and address), cash-on-delivery preferences, and an automated handoff that generates a pre-formatted itemised WhatsApp order message.
 
 <p align="center">
@@ -81,7 +52,7 @@ Zero-friction checkout flow featuring strict client-side validation (Indian mobi
 
 ---
 
-### 4. Admin Studio & Secure Cloud Infrastructure
+### 3. Admin Studio & Secure Cloud Infrastructure
 Protected management portal backed by PostgreSQL Row Level Security (RLS) policies, private cloud bucket signed URLs, and admin role isolation ensuring public visitors cannot mutate catalogue state.
 
 <p align="center">
@@ -144,13 +115,6 @@ Protected management portal backed by PostgreSQL Row Level Security (RLS) polici
 5. **Build and prerender static pages:**
    ```bash
    npm run build
-   ```
-
-6. **Regenerate promotional feature media:**
-   ```bash
-   node scripts/generate-website-demo.mjs   # Generates 16:9 desktop walkthrough
-   node scripts/generate-promo-video.mjs    # Generates 9:16 vertical mobile reel
-   python scripts/convert_media.py          # Encodes MP4 and creates looping GIFs
    ```
 
 ---

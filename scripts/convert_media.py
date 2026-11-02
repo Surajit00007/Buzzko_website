@@ -70,3 +70,4 @@ if __name__ == '__main__':
     
     # 3. Create animated GIF for README autoplay
     create_animated_gif('public/buzzko-website-demo.webm', 'public/buzzko-website-demo.gif', target_width=720, fps=12)
+
