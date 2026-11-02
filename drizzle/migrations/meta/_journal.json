@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1793520120447,
+      "tag": "0000_admin_catalogue_and_images",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793520315456,
+      "tag": "0001_restrict_role_check_execution",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793520342760,
+      "tag": "0002_validate_catalogue_writes",
+      "breakpoints": true
+    }
+  ]
+}

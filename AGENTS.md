@@ -1,0 +1,9 @@
+- Mount auth, Cloud catalogue, and bag providers at the root; storefront and studio share products so edits and cart sale pricing cannot diverge.
+- Keep initial product data separate from catalogue validation and selection rules; hero layout slots are product-agnostic and only bind to sorted featured catalogue entries.
+- Read the public catalogue through the browser Cloud client after hydration; never auto-publish old browser-local product edits.
+- Build wordmarks through the shared editable Wordmark component; swap that component for the actual logo when supplied, never claim typed lettering is an uploaded asset.
+- Enforce all product and image writes through database admin-role policies, with roles in a protected separate table; UI gates alone are not authorization.
+- Product photos use private Cloud storage and renewed signed links because workspace policy blocks public buckets; use ProductVisual everywhere for a consistent photo/charm fallback.
+- Store original price and optional lower sale price; derive sale amount, discount percentage, and bag totals through shared pricing helpers.
+- Keep collection-wide offer copy in OfferStrip and render it only when every matching catalogue product has the advertised selling price, preventing stale promotions after admin edits.
+- Build bag and checkout WhatsApp links through the shared order helper using live selling prices; collect delivery details only in checkout state and hand off via click-to-chat, never claim a confirmed order or automated send.

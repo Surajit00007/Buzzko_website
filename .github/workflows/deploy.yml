@@ -1,0 +1,63 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    env:
+      VITE_BASE_PATH: "/Buzzko_website/"
+      VITE_SUPABASE_URL: "https://xvdlkejwhailrbqelavg.supabase.co"
+      VITE_SUPABASE_PUBLISHABLE_KEY: "sb_publishable_MdKgmdhdhDVOs2_2Xsm_qQ_zWquR4fo"
+      VITE_SUPABASE_PROJECT_ID: "xvdlkejwhailrbqelavg"
+      SUPABASE_URL: "https://xvdlkejwhailrbqelavg.supabase.co"
+      SUPABASE_PUBLISHABLE_KEY: "sb_publishable_MdKgmdhdhDVOs2_2Xsm_qQ_zWquR4fo"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build site (Prerender static pages)
+        run: npm run build
+
+      - name: Prepare for GitHub Pages
+        run: |
+          cp .output/public/index.html .output/public/404.html
+          touch .output/public/.nojekyll
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ".output/public"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
