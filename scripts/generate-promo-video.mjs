@@ -209,7 +209,9 @@ function startAnimationAndRecording(screens) {
       const zoom = 1.15;
       const panX = Math.sin(t * 1.5) * 20;
       const panY = Math.cos(t * 1.5) * 15;
-      ctx.drawImage(heroImg, 0, 0, 1280, 900, sX - 100 - panX, screenContentY - panY, sW * 1.8, (sW * 1.8 / 1280) * 900);
+      const hW = heroImg.naturalWidth || heroImg.width || 1280;
+      const hH = heroImg.naturalHeight || heroImg.height || 720;
+      ctx.drawImage(heroImg, 0, 0, hW, hH, sX - 100 - panX, screenContentY - panY, sW * 1.8, (sW * 1.8 / hW) * hH);
 
       tapX = sX + 160 + Math.sin(t * 2) * 50;
       tapY = screenContentY + 200 + Math.cos(t * 2) * 30;

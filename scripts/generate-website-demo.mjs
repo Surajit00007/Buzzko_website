@@ -150,12 +150,14 @@ function startRecording(screens) {
       ctx.rect(bX, bY + titleH, bW, bH - titleH);
       ctx.clip();
 
+      const imgW = imgSrc.naturalWidth || imgSrc.width || 1280;
+      const imgH = imgSrc.naturalHeight || imgSrc.height || 720;
       const vW = bW * zoom;
-      const vH = (bW / 1280) * 900 * zoom;
+      const vH = (bW / imgW) * imgH * zoom;
       const renderX = bX - panX;
       const renderY = (bY + titleH) - scrollY - panY;
 
-      ctx.drawImage(imgSrc, 0, 0, 1280, 900, renderX, renderY, vW, vH);
+      ctx.drawImage(imgSrc, 0, 0, imgW, imgH, renderX, renderY, vW, vH);
       ctx.restore();
 
       ctx.restore();
@@ -502,3 +504,4 @@ server.listen(9877, () => {
     process.exit(1);
   });
 });
+

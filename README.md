@@ -11,33 +11,44 @@
 
 ---
 
-## 🖥️ Website & Features Walkthrough Demo
+## 🌐 Live Storefront
 
-Watch the comprehensive feature demonstration showcasing the desktop experience, interactive physics stage, dynamic cart drawer, cloud catalogue filters, and WhatsApp order handoff:
+The live storefront is deployed and accessible on GitHub Pages:
+**[https://surajit00007.github.io/Buzzko_website/](https://surajit00007.github.io/Buzzko_website/)**
 
 <p align="center">
-  <video src="https://raw.githubusercontent.com/Surajit00007/Buzzko_website/main/public/buzzko-website-demo.webm" width="100%" controls autoplay loop muted>
-    Your browser does not support the video tag.
-  </video>
+  <img src="public/preview-live-site.png" alt="Buzzko Live Storefront on GitHub Pages" width="100%" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.18);" />
 </p>
-
-- 📥 **[Download Desktop Demo Video (16:9 Widescreen .webm)](public/buzzko-website-demo.webm)** *(Backup: `Assets/buzzko-website-demo.webm`)*
-- 📐 **Specifications**: 1280×720 (16:9 HD), 30fps with browser chrome mockup, pointer interaction simulation, and tech stack architecture cards.
 
 ---
 
-## 📱 Mobile Feature Promotional Reel (For Social Media Content Posting)
+## 🖥️ Website & Features Walkthrough Demo
 
-Designed specifically for posting across **Instagram Reels, TikTok, YouTube Shorts, and LinkedIn** to demonstrate the mobile responsive website and its interactive UI architecture:
+A walkthrough demonstrating the desktop experience, interactive physics charm stage, dynamic bag drawer, cloud catalogue filters, and WhatsApp order handoff:
 
 <p align="center">
-  <video src="https://raw.githubusercontent.com/Surajit00007/Buzzko_website/main/public/buzzko-feature-reel.webm" width="380" controls autoplay loop muted>
-    Your browser does not support the video tag.
-  </video>
+  <img src="public/buzzko-website-demo.gif" alt="Buzzko Feature Walkthrough Demo" width="100%" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);" />
 </p>
 
-- 📥 **[Download Mobile Feature Reel (9:16 Vertical .webm)](public/buzzko-feature-reel.webm)** *(Backup: `Assets/buzzko-feature-reel.webm`)*
-- 🎞️ **Specifications**: 720×1280 (9:16 Vertical), smartphone bezel mockup, dynamic island, tactile tap animations, and live feature cards.
+### 📥 Video Downloads & Formats
+- 🎬 **[Download MP4 Video (1080p / 720p HD)](public/buzzko-website-demo.mp4)** *(Compatible with Windows, Mac, iOS, Android, and video editors)*
+- 🎞️ **[Download WebM Video (High Quality)](public/buzzko-website-demo.webm)**
+- 📁 Backup copies also stored in `Assets/buzzko-website-demo.mp4` and `Assets/buzzko-website-demo.webm`.
+
+---
+
+## 📱 Mobile UI Promotional Reel (For Social Media Content Posting)
+
+Specially formatted for content posting on **Instagram Reels, TikTok, YouTube Shorts, and WhatsApp Status** to showcase the mobile responsive web app, touch interactions, and UI architecture:
+
+<p align="center">
+  <img src="public/buzzko-feature-reel.gif" alt="Buzzko Mobile Feature Reel" width="360" style="border-radius: 24px; box-shadow: 0 12px 35px rgba(0,0,0,0.25);" />
+</p>
+
+### 📥 Reel Video Downloads
+- 🎬 **[Download Mobile Reel (MP4 9:16 Vertical HD)](public/buzzko-feature-reel.mp4)** *(Ready to upload to Instagram Reels / YouTube Shorts)*
+- 🎞️ **[Download Mobile Reel (WebM 9:16 Vertical)](public/buzzko-feature-reel.webm)**
+- 📁 Backup copy stored in `Assets/buzzko-feature-reel.mp4`
 
 ---
 
@@ -135,10 +146,11 @@ Protected management portal backed by PostgreSQL Row Level Security (RLS) polici
    npm run build
    ```
 
-6. **Regenerate promotional feature videos:**
+6. **Regenerate promotional feature media:**
    ```bash
    node scripts/generate-website-demo.mjs   # Generates 16:9 desktop walkthrough
    node scripts/generate-promo-video.mjs    # Generates 9:16 vertical mobile reel
+   python scripts/convert_media.py          # Encodes MP4 and creates looping GIFs
    ```
 
 ---
